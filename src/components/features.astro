@@ -4,40 +4,20 @@ import { Icon } from "astro-icon/components";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
-    description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
+    title: "Open source",
+    description: "Kavka's source code is freely available for anyone to inspect, modify, and contribute to.",
+    icon: "bx:bxl-github",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Security",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
+      "Kavka prioritizes speed and reliability, offering a secure central server to keep your messages accessible and protected.",
+    icon: "bx:bxs-check-shield",
   },
   {
-    title: "On-Demand Components",
-    description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
+    title: "Strong encryption",
+    description: "Kavka utilizes robust encryption to ensure your messages remain confidential, keeping your conversations strictly between you and the intended recipient.",
     icon: "bx:bxs-data",
-  },
-  {
-    title: "Broad Integration",
-    description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
-  },
-  {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
-  },
-  {
-    title: "Community",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
   },
 ];
 ---
@@ -46,9 +26,8 @@ const features = [
   <h2 class="text-white text-4xl lg:text-5xl font-bold lg:tracking-tight">
     You we prefer to use Kavka
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
+  <p class="text-lg mt-4 text-slate-300">
+    While Kavka is a centralized platform, it offers a secure and reliable experience. Our data is entrusted to their robust servers, ensuring messages are always accessible and protected. This focus on stability gives us peace of mind, knowing our conversations are in safe hands.
   </p>
 </div>
 
@@ -61,7 +40,7 @@ const features = [
         </div>
         <div>
           <h3 class="font-semibold text-lg text-white">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+          <p class="text-slate-400 mt-2 leading-relaxed">{item.description}</p>
         </div>
       </div>
     ))
