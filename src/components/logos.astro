@@ -3,20 +3,21 @@
 import { Icon } from "astro-icon/components";
 
 const logos = [
-  "simple-icons:visualstudiocode",
+  "simple-icons:github",
+  "simple-icons:googlegemini",
   "simple-icons:go",
   "simple-icons:vuedotjs",
-  "simple-icons:typescript",
   "simple-icons:mongodb",
-  "simple-icons:github",
   "simple-icons:redis",
-
+  "simple-icons:docker",
+  "simple-icons:kubernetes",
+  "simple-icons:apachekafka",
 ];
 ---
 
 <div class="mt-24">
   <h2 class="text-center text-2xl text-white">Works with your technologies</h2>
-  <div class="flex gap-8 md:gap-10 items-center justify-center mt-10 flex-wrap">
+  <div class="flex gap-8 md:gap-8 items-center justify-center mt-10 flex-wrap">
     {
       logos.map((logo) => (
         <Icon class="text-white size-8 md:size-7" name={logo} />
