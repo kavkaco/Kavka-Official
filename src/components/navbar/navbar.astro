@@ -1,0 +1,112 @@
+---
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Image } from "astro:assets";
+import logo from "../../assets/logo_dark.png";
+import { Icon } from "astro-icon/components";
+
+const menuitems = [
+  {
+    title: "Apply as developer",
+    path: "#",
+    children: [
+      { title: "Apply as ", path: "/" },
+      { title: "Another action", path: "#" },
+      { title: "Dropdown Submenu", path: "#" },
+      { title: "404 Page", path: "/404" },
+    ],
+  },
+  {
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Blog",
+    path: "/blog",
+  },
+  {
+    title: "Report a bug",
+    path: "/report_bug",
+  },
+];
+---
+
+<Container>
+  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between">
+        <a href="/" class="text-lg">
+          <Image src={logo} alt="Kavka Logo" width="45" />
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-4 h-4 text-gray-50" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-3">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )}
+
+                {!item.children && (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex lg:px-3 py-2 items-center text-gray-100 hover:text-gray-200"
+                    >
+                      <span> {item.title}</span>
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+        
+        <div class="lg:hidden mt-3 flex items-center gap-4">
+          <a
+            class="text-white border border-lightGrey rounded-lg px-5 py-2 justify-center flex gap-2 w-full"
+            href="web.kavka.com/signup"
+          >
+            <Icon class="mt-0.5 w-5 h-5" name="bx:bxs-coffee" />
+            Donate
+          </a>
+          <a
+            class="bg-primary text-white rounded-lg px-5 py-2 justify-center flex gap-2 w-full"
+            href="web.kavka.com/login"
+          >
+            <Icon class="mt-0.5 w-5 h-5" name="bx:bxs-download" />
+            Get app
+          </a>
+        </div>
+      </MenuItems>
+    </Astronav>
+    <div>
+      <div class="hidden lg:flex items-center gap-4">
+        <a
+          class="text-white border border-lightGrey rounded-lg px-5 py-2 flex gap-2"
+          href="web.kavka.com/signup"
+        >
+          <Icon class="mt-0.5 w-5 h-5" name="bx:bxs-coffee" />
+          Donate
+        </a>
+        <a
+          class="bg-primary text-white rounded-lg px-5 py-2 flex gap-2"
+          href="web.kavka.com/login"
+        >
+          <Icon class="mt-0.5 w-5 h-5" name="bx:bxs-download" />
+          Get app
+        </a>
+      </div>
+    </div>
+  </header>
+</Container>
