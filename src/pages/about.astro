@@ -1,16 +1,50 @@
 ---
-import { getCollection } from "astro:content";
-import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
-
-// Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
 ---
 
 <Layout title="About">
-  <Container>
-  </Container>
+    <Container class="py-10">
+        <h1 class="text-white text-5xl font-bold">About</h1>
+
+        <p class="text-context text-xl leading-8 mt-4">
+            Kavka is a robust, open-source messaging platform that has been empowering individuals and teams to connect and collaborate seamlessly since 2019. Built on a foundation of privacy, security, and user-centric design, Kavka offers a flexible and customizable
+            communication solution.
+
+            <br />
+            <br />
+
+            <b>Our story began with a simple idea: </b> to create a messaging platform that prioritizes user control and fosters a sense of connection without compromising privacy. The early days were filled with passion and exploration. We, the developers behind Kavka, poured countless
+            hours into crafting a robust foundation for the platform. We meticulously designed the core functionalities, ensuring a smooth and intuitive user experience. Security was paramount from the very beginning. We implemented industry-leading encryption techniques to safeguard
+            user data and communication.
+
+            <br />
+            <br />
+
+            The early days were filled with passion and exploration. We, the developers behind Kavka, poured countless hours into crafting a robust foundation for the platform. We meticulously designed the core functionalities, ensuring a smooth and intuitive user experience.
+            Security was paramount from the very beginning. We implemented industry-leading encryption techniques to safeguard user data and communication. As Kavka started gaining traction, a vibrant community blossomed around it. Users from all walks of life joined our
+            adventure, drawn to the platform's open-source nature and commitment to privacy. We actively engaged with the community, fostering an environment of collaboration and feedback. Their suggestions and bug reports proved invaluable in shaping Kavka into the platform it
+            is today.
+
+            <br />
+            <br />
+
+            Throughout 2020 and 2021, Kavka witnessed steady growth. We continuously innovated, introducing new features like video calling, file sharing, and group chats. However, our core principles – security, privacy, and user control – always remained at the forefront. We
+            strived to create a space where users could connect authentically, free from intrusive algorithms or data harvesting practices. The year 2022 marked a significant milestone for Kavka. Our codebase became publicly available on GitHub, officially declaring ourselves a
+            fully open-source project. This decision not only fostered transparency and trust but also opened doors for even greater collaboration. Developers from around the world could now contribute to Kavka's development, accelerating innovation and expanding its reach.
+
+            <br />
+            <br />
+
+            Today, Kavka stands as a testament to the power of open-source software. We are a community-driven project, constantly evolving with the help of our passionate users and developers. Our <a class="text-primary" href="https://t.me/kavkaco">Telegram channel</a>, serves
+            as a vibrant hub for discussions, feature requests, and technical support. Looking ahead, we envision Kavka becoming a global symbol of secure and private communication. We are committed to continuous development, fueled by the collective creativity of our community.
+            With your continued support, we believe Kavka can empower individuals and communities to connect meaningfully in a world increasingly dominated by centralized platforms.
+
+            <br />
+            <br />
+
+            Join us on our journey! Explore the codebase on <a class="text-primary" href="https://github.com/kavkaco">GitHub</a>, share your feedback on Telegram, and be a part of the future of secure and private communication. Together, we can build a messaging platform that
+            prioritizes user control and fosters genuine connections.
+        </p>
+    </Container>
 </Layout>

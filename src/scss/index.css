@@ -1,0 +1,24 @@
+body {
+  background-color: #000 !important;
+}
+
+#astronav-menu svg {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.text-context {
+  font-size: 26px;
+}
+.text-context,
+.text-context p,
+.text-context h1,
+.text-context h2,
+.text-context h3,
+.text-context span,
+.text-context b,
+.text-context ul,
+.text-context li,
+.text-context i {
+  color: #fff !important;
+}

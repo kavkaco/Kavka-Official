@@ -1,0 +1,58 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+const teamMembers = await getCollection("team");
+---
+
+<Layout title="About">
+    <Container class="py-10">
+        <h1 class="text-white text-5xl font-bold">Team</h1>
+        <h3 class="text-slate-200 text-2xl mt-2">Meet the people behind Kavka. 👾</h3>
+
+        <div class="team-grid mt-10">
+            {
+                teamMembers.map((member) => (
+                    <div class="rounded-md border border-lightGrey p-4">
+                        <h3 class="text-white text-2xl mt-2">{member.data.name}</h3>
+                        <h5 class="text-slate-200 text-md">{member.data.title}</h5>
+                        <img class="rounded-md mt-2 w-full" src={"https://avatars.githubusercontent.com/" + member.data.github_username} alt={member.data.name} />
+                        <div class="mt-4 flex flex-row items-center justify-evenly gap-3">
+                            {member.data.github_username ? (
+                                <a class="text-white text-xl" href={"https://github.com/" + member.data.github_username}>
+                                    <Icon name="simple-icons:github" />
+                                </a>
+                            ) : undefined}
+
+                            {member.data.socials.mastodon ? (
+                                <a class="text-white text-xl" href={member.data.socials.mastodon}>
+                                    <Icon name="simple-icons:mastodon" />
+                                </a>
+                            ) : undefined}
+
+                            {member.data.socials.twitter ? (
+                                <a class="text-white text-xl" href={member.data.socials.twitter}>
+                                    <Icon name="simple-icons:twitter" />
+                                </a>
+                            ) : undefined}
+
+                            {member.data.socials.donate ? (
+                                <a class="text-white text-xl" href={member.data.socials.donate}>
+                                    <Icon name="bx:bxs-coffee" />
+                                </a>
+                            ) : undefined}
+
+                            {member.data.socials.telegram ? (
+                                <a class="text-white text-xl" href={member.data.socials.telegram}>
+                                    <Icon name="simple-icons:telegram" />
+                                </a>
+                            ) : undefined}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </Container>
+</Layout>

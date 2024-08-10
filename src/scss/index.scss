@@ -1,8 +1,42 @@
-body{
+body {
     background-color: #000 !important;
 }
 
-#astronav-menu svg{ 
+#astronav-menu svg {
     width: 30px !important;
     height: 30px !important;
+}
+
+.text-context {
+    &,
+    p,
+    h1,
+    h2,
+    h3,
+    span,
+    b,
+    ul,
+    li,
+    i {
+        color: #fff !important;
+    }
+    font-size: 26px;
+}
+
+.team-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: auto auto auto;
+
+    @media screen and (max-width: 1100px) {
+        & {
+            grid-template-columns: auto auto;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        & {
+            grid-template-columns: auto;
+        }
+    }
 }
